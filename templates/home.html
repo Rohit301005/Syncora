@@ -4,5 +4,10 @@
   <main class="hero">
     <h1>Real-Time Chat</h1>
     <p>Day 1 works. The foundation is ready.</p>
+    {% if user.is_authenticated %}
+      <p><a href="{% url 'dashboard' %}">Open Syncora</a></p>
+    {% else %}
+      <p><a href="{% url 'login' %}">Log in</a> | <a href="{% url 'register' %}">Register</a></p>
+    {% endif %}
   </main>
 {% endblock %}

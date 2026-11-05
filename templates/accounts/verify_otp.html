@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Verify | Syncora{% endblock %}
+{% block content %}
+<main class="hero">
+  <h1>Verify your phone</h1>
+  <p>We sent a 6-digit code to {{ phone }}. For now, look in your terminal.</p>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Verify</button>
+  </form>
+</main>
+{% endblock %}
